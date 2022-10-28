@@ -1,7 +1,5 @@
 export default class Paddle
 {
-    position = {x: undefined, y: undefined }
-
     constructor(game) {
         this.gameWidth = game.gameWidth;
         this.gameHeight = game.gameHeight;
@@ -10,9 +8,8 @@ export default class Paddle
         this.color = '#00F';
         this.maxSpeed = 5;
         this.speed = 0;
-
-        this.position.y = this.gameHeight - this.height - 10;
-        this.position.x = this.gameWidth/2 - this.width/2;
+        this.position = {x: this.gameWidth/2 - this.width/2, 
+                        y: this.gameHeight - this.height - 10};
     }
 
     moveLeft() {

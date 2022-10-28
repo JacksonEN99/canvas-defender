@@ -12,7 +12,7 @@ export default class Ball {
     }
 
     reset() {
-        this.speed = { x: 3, y: -2 };
+        this.speed = { x: 2, y: -2 };
         this.position = { x: 50, y: 400 };
     }
 
@@ -21,7 +21,6 @@ export default class Ball {
     }
 
     update(deltaTime) {
-
         this.position.x += this.speed.x;
         this.position.y += this.speed.y;
 
@@ -37,7 +36,6 @@ export default class Ball {
             this.reset();
         }
             
-
         if(detectCollision(this.game.paddle, this)) {
             this.speed.y *= -1;
             this.position.y = this.game.paddle.position.y - this.size;

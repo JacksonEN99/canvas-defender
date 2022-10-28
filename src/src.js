@@ -16,7 +16,6 @@ function animate(timeStamp)
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     game.update(deltaTime);
     game.draw(ctx);
-
     requestAnimationFrame(animate);
 }
 animate();
