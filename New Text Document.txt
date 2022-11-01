@@ -1,0 +1,14 @@
+X: 310.5 Y: 139.35
+topOfObject: 135 bottomOfObject: 160 leftSide: 300 rightSide: 350
+X: 326.5 Y: 123.35
+topOfObject: 110 bottomOfObject: 135 leftSide: 300 rightSide: 350
+X: 360.5 Y: 89.35
+topOfObject: 85 bottomOfObject: 110 leftSide: 350 rightSide: 400
+X: 360.65 Y: 110.65
+topOfObject: 110 bottomOfObject: 135 leftSide: 350 rightSide: 400
+X: 376.5 Y: 73.35
+topOfObject: 60 bottomOfObject: 85 leftSide: 350 rightSide: 400
+X: 410.65 Y: 128.65
+topOfObject: 110 bottomOfObject: 135 leftSide: 400 rightSide: 450
+X: 410.5 Y: 107.35
+topOfObject: 135 bottomOfObject: 160 leftSide: 400 rightSide: 450
