@@ -1,0 +1,2 @@
+have the ball spin counter-clockwise when going to the left and clockwise when moving to the right
+use trigometry to figure out 
