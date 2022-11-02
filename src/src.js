@@ -1,9 +1,10 @@
+import { variables } from '/src/variables.js';
 import Game from '/src/game.js';
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-canvas.width = 800; // 800
-canvas.height = 450; // 450
+canvas.width = variables.canvas_width
+canvas.height = variables.canvas_height
 
 let game = new Game(canvas.width, canvas.height);
 

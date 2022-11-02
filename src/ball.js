@@ -1,3 +1,4 @@
+import { variables } from './variables.js'
 import { detectCollision } from "/src/collisionDetection.js";
 
 export default class Ball {
@@ -13,7 +14,7 @@ export default class Ball {
 
     reset() {
         this.speed = { x: 4 , y: -5 };
-        this.position = { x: 0 , y: 450 - this.size };
+        this.position = { x: 0 , y: variables.canvas_height - this.size };
     }
 
     draw(ctx) {
