@@ -1,4 +1,4 @@
-import contactPoint from './functions.js'
+import { contactPoint } from './functions.js'
 
 export function detectCollision(gameObject, ball) {
     const topOfObject = gameObject.position.y;

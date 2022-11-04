@@ -1,4 +1,5 @@
 import { detectCollision } from "/src/collisionDetection.js";
+import { updateMenu } from './functions.js';
 
 export default class Brick {
     constructor(game, position) {
@@ -18,6 +19,8 @@ export default class Brick {
         if(detectCollision(this, this.game.ball)) {
             this.game.ball.speed.y *= -1;
             this.markedForDeletion = true;
+            this.game.score += 50;
+            updateMenu(this.game)
         }
     }
 }

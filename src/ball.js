@@ -1,5 +1,6 @@
 import { variables } from './variables.js'
 import { detectCollision } from "/src/collisionDetection.js";
+import { updateMenu } from './functions.js';
 
 export default class Ball {
 
@@ -34,6 +35,7 @@ export default class Ball {
         // Wall at the Bottom
         if(this.position.y + this.size >= this.gameHeight) {
             this.game.lives--;
+            updateMenu(this.game);
             this.reset();
         }
             

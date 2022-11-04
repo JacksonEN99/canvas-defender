@@ -1,5 +1,12 @@
+export function updateMenu(object) {
+    score.children[0].innerHTML = object.score;
+    lives.children[0].innerHTML = object.lives;
+    level.children[0].innerHTML = object.level;
+    difficulty.children[0].innerHTML = `Min: ${object.numRows.min} Max: ${object.numRows.max}`
+}
+
 // Returns a point on the 'ball', based upon the direction of the ball, that will be the point that touches other objects first
-export default function contactPoint(ball) {
+export function contactPoint(ball) {
     // Find the center coordinates of the 'ball' [position.x/.y are the coordinates of the top-left of the ball picture]
     const center = { x: ball.position.x + ball.size/2, y: ball.position.y + ball.size/2 }
     const angle = angleBetweenVectors(ball.speed.x, ball.speed.y)

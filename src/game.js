@@ -2,6 +2,7 @@ import Paddle from '/src/paddle.js';
 import InputHandler from '/src/input.js';
 import Ball from '/src/ball.js';
 import { buildLevel, buildBricks } from '/src/levels.js';
+import { updateMenu } from './functions.js';
 
 const GAMESTATE = {
     PAUSED: 0,
@@ -22,8 +23,11 @@ export default class Game {
         this.bricks = [];
         this.ball = new Ball(this);
         new InputHandler(this.paddle, this);
+        this.numRows = { min: 2, max: 3 };
         this.lives = 4;
-        this.numRows = { min: 2, max: 4 }
+        this.score = 0;
+        this.level = 1;
+        this.difficulty = 1;
     }
 
     start() {
@@ -32,6 +36,8 @@ export default class Game {
         this.ball.reset();
         this.gameObjects = [this.ball, this.paddle];
         this.gamestate = GAMESTATE.RUNNING;
+        // Update MENU ITEMS
+        updateMenu(this)
     }
 
     update(deltaTime) {
@@ -41,10 +47,12 @@ export default class Game {
             this.gamestate === GAMESTATE.GAMEOVER) return;
 
         if(this.bricks.length === 0) {
-            this.currentLevel++;
+            // this.currentLevel++;
+            this.level++;
+            this.numRows.min++;
+            this.numRows.max++;
             this.gamestate = GAMESTATE.NEWLEVEL;
             this.start();
-
         }
         
         [...this.gameObjects, ...this.bricks].forEach((object) => object.update(deltaTime));
