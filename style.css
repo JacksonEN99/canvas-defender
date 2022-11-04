@@ -39,7 +39,7 @@ span {
     /* border: 1px solid black; */
 }
 
-#score, #lives, #level, #difficulty {
+#score, #lives, #level, #speed {
     width: 50%;
     border: 0.5px solid #FFF;
     font-size: 1.3rem;

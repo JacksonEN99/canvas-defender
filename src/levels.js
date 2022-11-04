@@ -29,6 +29,7 @@ export function buildBricks(min, max) {
         bricks.push(a)
     }
     return bricks
+   //return [[0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0]]
 }
 
 // export const level1 = [

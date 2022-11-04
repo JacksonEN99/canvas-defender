@@ -10,11 +10,12 @@ export default class Ball {
         this.gameWidth = game.gameWidth;
         this.gameHeight = game.gameHeight;
         this.game = game;
+        this.speed = { x: 3 , y: -4 };
         this.reset();
     }
 
     reset() {
-        this.speed = { x: 4 , y: -5 };
+        this.speed = { x: Math.abs(this.speed.x) , y: Math.abs(this.speed.y) * -1 };
         this.position = { x: 0 , y: variables.canvas_height - this.size };
     }
 

@@ -6,7 +6,7 @@ export default class Paddle
         this.width = 100;
         this.height = 20;
         this.color = '#00F';
-        this.maxSpeed = 7;
+        this.maxSpeed = 10;
         this.speed = 0;
         this.position = {x: this.gameWidth/2 - this.width/2, 
                         y: this.gameHeight - this.height - 10};
