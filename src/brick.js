@@ -1,12 +1,13 @@
 import { detectCollision } from "/src/collisionDetection.js";
 import { updateMenu } from './functions.js';
+import { variables } from "./variables.js";
 
 export default class Brick {
     constructor(game, position) {
         this.image = document.getElementById('brick');
         this.position = position;
-        this.width = 50;
-        this.height = 25;
+        this.width = variables.brick_width;
+        this.height = variables.brick_height;
         this.game = game;
         this.markForDeletion = false;
     }

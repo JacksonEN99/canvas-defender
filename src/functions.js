@@ -2,9 +2,7 @@ export function updateMenu(object) {
     score.children[0].innerHTML = object.score;
     lives.children[0].innerHTML = object.lives;
     level.children[0].innerHTML = object.level;
-    //speed.children[0].innerHTML = `Min: ${object.numRows.min} Max: ${object.numRows.max}`;
     speed.children[0].innerHTML = `${magnitude(object.ball.speed).toFixed(1)} ft/s`;
-    //speed.children[0].innerHTML = `X: ${object.ball.speed.x} Y: ${object.ball.speed.y}`;
 }
 
 // Returns a point on the 'ball', based upon the direction of the ball, that will be the point that touches other objects first
@@ -42,15 +40,16 @@ function pointOnBall(radius, angle) {
     return {x: x, y: y}
 }
 
+// Returns the length, speed, of the point, a, from the origin of the unit circle
+function magnitude(a) {
+    return Math.sqrt(a.x * a.x + a.y * a.y)
+}
+
 // function dotProduct(a, b) {
 //     const A = a.x * b.x
 //     const B = a.y * b.y
 //     return A + B
 // }
-
-function magnitude(a) {
-    return Math.sqrt(a.x * a.x + a.y * a.y)
-}
 
 // function radiansToDegrees(x) {
 //     return x * (180/Math.PI)

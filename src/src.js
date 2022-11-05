@@ -15,8 +15,8 @@ function animate(timeStamp)
     let deltaTime = timeStamp - lastTime;
     lastTime = timeStamp;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    game.update(deltaTime);
+    game.update();
     game.draw(ctx);
     requestAnimationFrame(animate);
 }
-animate();
+window.requestAnimationFrame(animate);

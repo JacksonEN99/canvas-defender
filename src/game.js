@@ -24,8 +24,8 @@ export default class Game {
         this.bricks = [];
         this.ball = new Ball(this);
         new InputHandler(this.paddle, this);
-        this.numRows = { min: 1, max: 2 };
-        this.lives = 4;
+        this.numRows = variables.game_levels;
+        this.lives = variables.game_lives;
         this.score = 0;
         this.level = 1;
     }
@@ -36,11 +36,11 @@ export default class Game {
         this.ball.reset();
         this.gameObjects = [this.ball, this.paddle];
         this.gamestate = GAMESTATE.RUNNING;
-        // Update MENU ITEMS
+ 
         updateMenu(this)
     }
 
-    update(deltaTime) {
+    update() {
         if(this.lives === 0) this.gamestate = GAMESTATE.GAMEOVER;
         if(this.gamestate === GAMESTATE.PAUSED || 
             this.gamestate === GAMESTATE.MENU ||
@@ -48,17 +48,20 @@ export default class Game {
 
         if(this.bricks.length === 0) {
             this.level++;
+            // Increase the number of rows of bricks every 5th level increase
             if(this.level % 5 === 0) {
                 this.numRows.min++;
                 this.numRows.max++;
             }
+            // Gradually increse the speed of the ball after each level completion
             this.ball.speed.y = Math.abs(this.ball.speed.y) * -1 - variables.game_speed_increment;
             this.ball.speed.x = Math.abs(this.ball.speed.y) - 1;
+
             this.gamestate = GAMESTATE.NEWLEVEL;
             this.start();
         }
         
-        [...this.gameObjects, ...this.bricks].forEach((object) => object.update(deltaTime));
+        [...this.gameObjects, ...this.bricks].forEach((object) => object.update());
         this.bricks = this.bricks.filter(brick => !brick .markedForDeletion);
     }
 

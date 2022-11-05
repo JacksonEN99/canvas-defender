@@ -1,16 +1,16 @@
-import { variables } from './variables.js'
 import { detectCollision } from "/src/collisionDetection.js";
+import { variables } from './variables.js'
 import { updateMenu } from './functions.js';
 
 export default class Ball {
 
     constructor(game) {
         this.image = document.getElementById('ball');
-        this.size = 20;
+        this.size = variables.ball_size;
         this.gameWidth = game.gameWidth;
         this.gameHeight = game.gameHeight;
         this.game = game;
-        this.speed = { x: 3 , y: -4 };
+        this.speed = variables.ball_speed;
         this.reset();
     }
 

@@ -1,13 +1,15 @@
+import { variables } from "./variables.js";
+
 export default class Paddle
 {
     constructor(game) {
         this.gameWidth = game.gameWidth;
         this.gameHeight = game.gameHeight;
-        this.width = 100;
-        this.height = 20;
-        this.color = '#00F';
-        this.maxSpeed = 10;
-        this.speed = 0;
+        this.width = variables.paddle_width;
+        this.height = variables.paddle_height;
+        this.color = variables.paddle_color;
+        this.maxSpeed = variables.paddle_maxSpeed;
+        this.speed = variables.paddle_speed;
         this.position = {x: this.gameWidth/2 - this.width/2, 
                         y: this.gameHeight - this.height - 10};
     }
