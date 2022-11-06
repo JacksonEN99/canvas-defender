@@ -1,4 +1,4 @@
-import { contactPoint } from 'functions.js'
+import { contactPoint } from './functions.js'
 
 export function detectCollision(gameObject, ball) { 
     // Returns a point on the BALL, based upon the direction of the BALL
