@@ -1,6 +1,6 @@
-import { detectCollision } from "/src/collisionDetection.js";
-import { updateMenu } from '/src/functions.js';
-import { variables } from "/src/variables.js";
+import { detectCollision } from "collisionDetection.js";
+import { updateMenu } from 'functions.js';
+import { variables } from "variables.js";
 
 export default class Brick {
     constructor(game, position) {

@@ -1,5 +1,5 @@
-import { variables } from '/src/variables.js';
-import Brick from '/src/brick.js';
+import { variables } from 'variables.js';
+import Brick from 'brick.js';
 
 // Returns an Array of BRICK's to the GAME
 export function buildLevel(game, level) {

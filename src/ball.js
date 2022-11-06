@@ -1,6 +1,6 @@
-import { detectCollision } from "/src/collisionDetection.js";
-import { variables } from '/src/variables.js'
-import { updateMenu } from '/src/functions.js';
+import { detectCollision } from "collisionDetection.js";
+import { variables } from 'variables.js'
+import { updateMenu } from 'functions.js';
 
 export default class Ball {
     constructor(game) {
