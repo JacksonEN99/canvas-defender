@@ -3,15 +3,7 @@ import InputHandler from '/src/input.js';
 import Ball from '/src/ball.js';
 import { buildLevel, buildBricks } from '/src/levels.js';
 import { updateMenu } from './functions.js';
-import { variables } from './variables.js';
-
-const GAMESTATE = {
-    PAUSED: 0,
-    RUNNING: 1,
-    MENU: 2,
-    GAMEOVER: 3, 
-    NEWLEVEL: 4
-};
+import { variables, GAMESTATE } from './variables.js';
 
 export default class Game {
     constructor(gameWidth, gameHeight) {
@@ -72,8 +64,19 @@ export default class Game {
         let rgba;
 
         if(this.gamestate === GAMESTATE.PAUSED) { message = "Paused",  rgba = 0.5 }
-        if(this.gamestate === GAMESTATE.MENU) { message = "Press SPACEBAR To Start", rgba = 1 }
-        if(this.gamestate === GAMESTATE.GAMEOVER) { message = "GAME OVER", rgba = 1 }
+        if(this.gamestate === GAMESTATE.MENU) { message = "Press SPACEBAR To Start\n(press ESC to pause game)", rgba = 1 }
+        if(this.gamestate === GAMESTATE.GAMEOVER) { 
+            message = "GAME OVER\nPress SPACEBAR To Start", 
+            rgba = 1,
+            // Reset all GAME variables to their default values
+            //this.gamestate = GAMESTATE.MENU,
+            this.numRows = variables.game_levels,
+            this.lives = variables.game_lives,
+            this.score = 0,
+            this.level = 1,
+            // Reset BALL variables, also
+            this.ball.speed = variables.ball_speed
+        }
 
         if(this.gamestate !==  GAMESTATE.RUNNING) {
             ctx.rect(0, 0, this.gameWidth, this.gameHeight);
@@ -82,7 +85,19 @@ export default class Game {
             ctx.font = "30px Arial";
             ctx.fillStyle = "white";
             ctx.textAlign = "center";
-            ctx.fillText(message, this.gameWidth/2, this.gameHeight/2);    
+            const lines = message.split('\n');
+            lines.map( (e, index) => {
+                if (lines.length > 1) {
+                    if (index === 0) {
+                        ctx.fillText(e, this.gameWidth/2, this.gameHeight/2 - 10);  
+                    } else {
+                        ctx.font = "20px Arial";
+                        ctx.fillText(e, this.gameWidth/2, this.gameHeight/2 + 40);
+                    }
+                } else {
+                    ctx.fillText(e, this.gameWidth/2, this.gameHeight/2);   
+                }    
+            })
         }
     }
 

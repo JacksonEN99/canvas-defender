@@ -1,3 +1,5 @@
+import { GAMESTATE } from "./variables.js";
+
 export default class InputHandler
 {
     constructor(paddle, game) {
@@ -14,6 +16,7 @@ export default class InputHandler
                     game.togglePause();
                     break;
                 case 32:
+                    game.gamestate = GAMESTATE.MENU;
                     game.start();
                     break;
             }
