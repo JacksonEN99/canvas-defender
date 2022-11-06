@@ -1,4 +1,4 @@
-import Paddle from '.src/paddle.js';
+import Paddle from './paddle.js';
 import InputHandler from '.src/input.js';
 import Ball from '/src/ball.js';
 import { buildLevel, buildBricks } from '/src/levels.js';
