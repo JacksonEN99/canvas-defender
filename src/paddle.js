@@ -1,4 +1,4 @@
-import { variables } from "./src/variables.js";
+import { variables } from "variables.js";
 
 export default class Paddle {
     constructor(game) {

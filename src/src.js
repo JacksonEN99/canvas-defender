@@ -1,5 +1,5 @@
-import { variables } from './variables.js';
-import Game from './game.js';
+import { variables } from 'variables.js';
+import Game from 'game.js';
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
