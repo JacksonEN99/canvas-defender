@@ -2,8 +2,8 @@ import Paddle from '/src/paddle.js';
 import InputHandler from '/src/input.js';
 import Ball from '/src/ball.js';
 import { buildLevel, buildBricks } from '/src/levels.js';
-import { updateMenu } from './functions.js';
-import { variables, GAMESTATE } from './variables.js';
+import { updateMenu } from '/src/functions.js';
+import { variables, GAMESTATE } from '/src/variables.js';
 
 export default class Game {
     constructor(gameWidth, gameHeight) {

@@ -1,4 +1,4 @@
-import { GAMESTATE } from "./variables.js";
+import { GAMESTATE } from "/src/variables.js";
 
 export default class InputHandler
 {

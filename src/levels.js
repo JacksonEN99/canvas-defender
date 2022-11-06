@@ -1,4 +1,4 @@
-import { variables } from './variables.js';
+import { variables } from '/src/variables.js';
 import Brick from '/src/brick.js';
 
 // Returns an Array of BRICK's to the GAME
