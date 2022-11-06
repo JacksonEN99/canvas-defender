@@ -10,13 +10,10 @@ let game = new Game(canvas.width, canvas.height);
 
 let lastTime = 0;
 
-function animate(timeStamp)
-{
-    let deltaTime = timeStamp - lastTime;
-    lastTime = timeStamp;
+function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     game.update();
     game.draw(ctx);
     requestAnimationFrame(animate);
 }
-window.requestAnimationFrame(animate);
+requestAnimationFrame(animate);

@@ -1,6 +1,7 @@
 import { variables } from './variables.js';
 import Brick from '/src/brick.js';
 
+// Returns an Array of BRICK's to the GAME
 export function buildLevel(game, level) {
     let bricks = [];
     let space = 60;
@@ -16,6 +17,7 @@ export function buildLevel(game, level) {
     return bricks;
 }
 
+// Creates an Array with the number of rows being randomly generated between 'min' and 'max' values
 export function buildBricks(min, max) {
     const rows = Math.floor(Math.random() * (max - min + 1) + min)
     const columns = variables.canvas_width / 50

@@ -12,7 +12,7 @@ export default class Game {
 
         this.gamestate = GAMESTATE.MENU;
         this.paddle = new Paddle(this);
-        this.gameObjects = []; 
+        this.gameObjects = []; // Hold all the game 'objects'. e.g. 'ball', 'paddle', 'bricks'
         this.bricks = [];
         this.ball = new Ball(this);
         new InputHandler(this.paddle, this);
@@ -69,7 +69,6 @@ export default class Game {
             message = "GAME OVER\nPress SPACEBAR To Start", 
             rgba = 1,
             // Reset all GAME variables to their default values
-            //this.gamestate = GAMESTATE.MENU,
             this.numRows = variables.game_levels,
             this.lives = variables.game_lives,
             this.score = 0,

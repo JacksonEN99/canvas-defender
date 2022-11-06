@@ -1,7 +1,6 @@
 import { variables } from "./variables.js";
 
-export default class Paddle
-{
+export default class Paddle {
     constructor(game) {
         this.gameWidth = game.gameWidth;
         this.gameHeight = game.gameHeight;
